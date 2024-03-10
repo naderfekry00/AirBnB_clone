@@ -1,33 +1,42 @@
-#AirBnB Clone
-#Description
-This project is a simplified version of the AirBnB web application, focusing on the development of a command-line interpreter (CLI) that can manage objects within the application.
+## Project Description
 
-Command Interpreter
-The command interpreter allows users to interact with the AirBnB clone from the command line. It supports various commands for managing objects such as creating, deleting, updating, and displaying instances of classes.
+This project is a simplified clone of Airbnb. It's a platform where users can list and book places to stay from their mobile phones or computers. The project is built using Python and includes a command interpreter for managing the application's data.
 
-#How to Start
-To start the command interpreter, follow these steps:
+## Command Interpreter
 
-Clone the repository to your local machine.
-Navigate to the project directory.
-Run the command ./console.py to start the CLI.
-How to Use
-Once the command interpreter is running, you can use the following commands:
+The command interpreter is designed to manage the objects of our Airbnb clone. It's a console that allows us to perform CRUD operations: Create new objects, Retrieve data from objects, Update object's information, and Delete objects.
 
-create: Create a new instance of a class.
-show: Display information about a specific instance.
-destroy: Delete a specific instance.
-all: Display information about all instances or all instances of a specific class.
-update: Update attributes of a specific instance.
-For detailed usage instructions and command syntax, refer to the documentation or use the help command within the CLI.
+### How to Start
 
-#Examples
-Here are some examples of how to use the command interpreter:
+To start the command interpreter, navigate to the project directory and run the console.py file:
 
-create User: Create a new user instance.
-show User 1234: Display information about the user with ID 1234.
-destroy Place 5678: Delete the place with ID 5678.
-all City: Display information about all city instances.
+bash
+./console.py
 
-#run and watch use nodemon for pycodestyle
-nodemon --exec "clear && pycodestyle consonsole.py" -e py
+
+### How to Use
+
+Once the console is running, you can use the following commands:
+
+- create <class name>: Creates a new instance of <class name>.
+- show <class name> <id>: Prints the string representation of an instance based on <class name> and <id>.
+- destroy <class name> <id>: Deletes an instance based on <class name> and <id>.
+- all <class name> or all: Shows all instances of <class name> or all instances of every class.
+- update <class name> <id> <attribute name> "<attribute value>": Updates an instance based on <class name> and <id> by adding or updating an attribute.
+
+### Examples
+
+bash
+$ ./console.py
+(hbnb) create BaseModel
+49faff9a-6318-451f-87b6-910505c55907
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': '2022-03-22T14:00:00', 'updated_at': '2022-03-22T14:00:00'}
+(hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 name "Betty"
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': '2022-03-22T14:00:00', 'updated_at': '2022-03-22T14:00:00', 'name': 'Betty'}
+(hbnb) destroy BaseModel 49faff9a-6318-451f-87b6-910505c55907
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+** no instance found **
+(hbnb) quit
+
